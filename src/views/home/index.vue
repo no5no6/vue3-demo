@@ -1,6 +1,10 @@
 <template>
   <div>
     <h1>Home</h1>
+    <img
+      src="@/assets/logo.png"
+      style="width: 40px; height: 40px;"
+    >
     <div>value: {{ name }}</div>
     <div>count: {{ mainStore.count }}</div>
     <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
@@ -11,8 +15,8 @@
 </template>
 
 <script setup lang="ts">
-import HelloWorld from '../../components/HelloWorld.vue'
-import { useMainStore } from '../../store/main'
+import HelloWorld from '@/components/HelloWorld.vue'
+import { useMainStore } from '@/store/main'
 import { storeToRefs } from 'pinia'
 
 const mainStore = useMainStore()
