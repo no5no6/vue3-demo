@@ -29,6 +29,10 @@ const change = () => {
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import '@/styles/variables.scss';
 
+h1 {
+  color: $color
+}
 </style>
