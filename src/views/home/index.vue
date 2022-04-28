@@ -30,9 +30,10 @@ const change = () => {
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/variables.scss';
+// @import '@/styles/variables.scss';
 
 h1 {
-  color: $color
+  // vite.config.js 中配置了全局注入
+  color: $color;
 }
 </style>

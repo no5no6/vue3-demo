@@ -22,5 +22,13 @@ export default defineConfig({
       // 如果 ts 文件使用，还需要在 tsconfig.json 的 compilerOptions 中增加 "paths": {"@/*" : ["src/*"]}
       { find: '@', replacement: path.join(__dirname, 'src') }
     ]
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // 配置后，就无需每个文件单独引用，可直接使用全局变量
+        additionalData: '@import "@/styles/variables.scss";'
+      }
+    }
   }
 })
