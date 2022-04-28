@@ -18,6 +18,8 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 import { useMainStore } from '@/store/main'
 import { storeToRefs } from 'pinia'
+import { onMounted } from 'vue'
+import { getArticleList } from '@/api/article'
 
 const mainStore = useMainStore()
 const { value: name } = storeToRefs(mainStore)
@@ -26,6 +28,13 @@ const change = () => {
   name.value = '加载中...'
   mainStore.getValue(mainStore.number)
 }
+
+onMounted(async () => {
+  const response = await getArticleList()
+
+  console.log(response.articles[0].author)
+  console.log(response, 'rrrrr')
+})
 
 </script>
 

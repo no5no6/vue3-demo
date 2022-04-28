@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
 
 const request = axios.create({
   baseURL: 'https://api.realworld.io/api'
@@ -18,4 +18,10 @@ axios.interceptors.response.use(function (response) {
   return Promise.reject(error)
 })
 
-export default request
+export default <T = any> (config: AxiosRequestConfig) => {
+  return request(config).then(res => {
+    return res.data as T
+  })
+}
+
+// export default request
